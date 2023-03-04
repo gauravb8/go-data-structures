@@ -8,7 +8,8 @@ and utilize information about the pattern to identify partial matches.
 */
 func ComputeLPS(pat string) []int {
 	lps := make([]int, len(pat))
-	i, prevLPS := 1, 0 // lps[0] will always be 0 as
+	// lps[0] will always be 0 as there are no proper prefixes == suffix for a single character
+	i, prevLPS := 1, 0
 
 	for i < len(pat) {
 		if pat[i] == pat[prevLPS] {
